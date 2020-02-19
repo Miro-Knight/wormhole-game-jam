@@ -1268,9 +1268,9 @@ MonoBehaviour:
       type: 3}
     size: 200
   - tag: hole
-    prefab: {fileID: 1657363023098502080, guid: 17b821d44fa58c64b964f85872b512bb,
+    prefab: {fileID: 1329623876384231439, guid: 3885e730d83d7744ea0b633f4f9aeb89,
       type: 3}
-    size: 200
+    size: 50
 --- !u!4 &893218204
 Transform:
   m_ObjectHideFlags: 0
@@ -1546,7 +1546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2462dfd8e8061140a0824d847136405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnEvery: 1
+  spawnEvery: 0.2
 --- !u!1 &1103716150
 GameObject:
   m_ObjectHideFlags: 0
