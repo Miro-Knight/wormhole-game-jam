@@ -45,6 +45,7 @@ public class ObjectPool : MonoBehaviour
                 if (pool.tag == "hole")
                 {
                     spawnPosition = Random.onUnitSphere * ((planet.transform.localScale.x / 1.98f) + pool.prefab.transform.localScale.y) + planet.transform.position;
+                    
 
 
                 }
