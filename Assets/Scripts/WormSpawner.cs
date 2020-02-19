@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WormSpawner : MonoBehaviour
 {
-
+  
     public float spawnEvery;
 
     ObjectPool objectPool;
@@ -13,10 +13,12 @@ public class WormSpawner : MonoBehaviour
     {
         objectPool = ObjectPool.instance;
         InvokeRepeating("SpawnWithDelay", spawnEvery, spawnEvery);
+        
     }
 
     void SpawnWithDelay()
     {
         objectPool.SpawnFromPool("worm");
+    
     }
 }

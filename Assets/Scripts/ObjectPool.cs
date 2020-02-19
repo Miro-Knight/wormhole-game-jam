@@ -6,6 +6,7 @@ public class ObjectPool : MonoBehaviour
 {
     public static ObjectPool instance;
     public GameObject planet;
+    public GameObject holemodel;
 
     private void Awake()
     {
@@ -38,9 +39,11 @@ public class ObjectPool : MonoBehaviour
                 if (pool.tag == "worm")
                 {
                     spawnPosition = Random.onUnitSphere * ((planet.transform.localScale.x / 1.98f) + pool.prefab.transform.localScale.y) + planet.transform.position;
+                    Instantiate(holemodel, spawnPosition, Quaternion.identity);
+
                 }
                 // Quaternion spawnRotation = Quaternion.identity;
-                GameObject obj = Instantiate(pool.prefab, spawnPosition, spawnRotation);
+                GameObject obj = Instantiate(pool.prefab, spawnPosition,spawnRotation);
                 obj.AddComponent<BoxCollider>();
                 obj.AddComponent<FauxGravityBody>();
                 obj.GetComponent<FauxGravityBody>().attractor = planet.GetComponent<FauxGravityAttractor>();

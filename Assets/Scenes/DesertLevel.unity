@@ -1115,6 +1115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planet: {fileID: 1650798384}
+  holemodel: {fileID: 219489603763981895, guid: f67cdf70680378645bdf84e17ee98fbf,
+    type: 3}
   pools:
   - tag: rock
     prefab: {fileID: 703476703049767078, guid: fb0da3fe7566d4c41afa575f4e2cc257, type: 3}
