@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     private DestroyBuggy destroyBuggy;
-
+    public Text Speed = null;
     public AudioSource deathAudio;
     public AudioSource rockHitAudio;
     public AudioSource engineBoostAudio;
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(transform.position + (-transform.right) * carSpeed * Time.fixedDeltaTime);
+        Speed.text = carSpeed.ToString("F0");
         if (Input.GetAxis("Horizontal") != 0)
         {
             rb.MovePosition(rb.position + transform.TransformDirection(moveDir) * carSpeed * Time.fixedDeltaTime);

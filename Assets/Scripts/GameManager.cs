@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Text Score =null;
+    
     private string timeTracker;
 
     // Start is called before the first frame update
@@ -21,9 +22,11 @@ public class GameManager : MonoBehaviour
         if (!DestroyBuggy.isDead)
         {
             timeTracker = Time.time.ToString("F2");
+         
         }
         Debug.Log(timeTracker);
         Debug.Log(PlayerController.carSpeed.ToString("F0"));
         Score.text = timeTracker;
+
     }
 }
