@@ -1367,7 +1367,7 @@ MonoBehaviour:
       type: 3}
     size: 200
   - tag: hole
-    prefab: {fileID: 1329623876384231439, guid: 3885e730d83d7744ea0b633f4f9aeb89,
+    prefab: {fileID: 7365812757707807543, guid: ce8c1fbf2546b3f4485b9a31bd201151,
       type: 3}
     size: 50
 --- !u!4 &893218204
