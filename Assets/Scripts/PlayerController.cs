@@ -8,14 +8,15 @@ public class PlayerController : MonoBehaviour
 {
     private DestroyBuggy destroyBuggy;
     public Text Speed = null;
+    public Text Turn = null;
     public AudioSource deathAudio;
     public AudioSource rockHitAudio;
     public AudioSource engineBoostAudio;
-
+    public Animator animator;
     private CinemachineVirtualCamera vCam;
     public static float carSpeed = 15;
     public float maxSpeed = 70;
-
+    private float move;
     private Rigidbody rb;
 
     private Vector3 moveDir;
@@ -34,15 +35,19 @@ public class PlayerController : MonoBehaviour
     {
         // moveDir = new Vector3(Input.GetAxis("Vertical"), 0, Input.GetAxis("Horizontal")).normalized;
         moveDir = new Vector3(0, 0, Input.GetAxis("Horizontal")).normalized;
-    }
+}
 
     private void FixedUpdate()
     {
+        move = Input.GetAxis("Vertical");
         rb.MovePosition(transform.position + (-transform.right) * carSpeed * Time.fixedDeltaTime);
         Speed.text = carSpeed.ToString("F0");
+        animator.SetFloat("Is Turning", move);
+        Turn.text = Input.GetAxis("Horizontal").ToString("F0");
         if (Input.GetAxis("Horizontal") != 0)
         {
             rb.MovePosition(rb.position + transform.TransformDirection(moveDir) * carSpeed * Time.fixedDeltaTime);
+           
 
         }
     }
