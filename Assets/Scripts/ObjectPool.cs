@@ -42,7 +42,18 @@ public class ObjectPool : MonoBehaviour
                    
 
                 }
-                
+                if (pool.tag == "SafetyCone")
+                {
+                    spawnPosition = Random.onUnitSphere * ((planet.transform.localScale.x / 2.37f) + pool.prefab.transform.localScale.y) + planet.transform.position;
+
+
+                }
+                if (pool.tag == "Cactus")
+                {
+                    spawnPosition = Random.onUnitSphere * ((planet.transform.localScale.x / 1.70f) + pool.prefab.transform.localScale.y) + planet.transform.position;
+
+
+                }
                 // Quaternion spawnRotation = Quaternion.identity;
                 GameObject obj = Instantiate(pool.prefab, spawnPosition,spawnRotation);
                 obj.AddComponent<BoxCollider>();

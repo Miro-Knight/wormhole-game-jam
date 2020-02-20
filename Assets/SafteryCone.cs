@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HoleSpawner : MonoBehaviour
+public class SafteryCone : MonoBehaviour
 {
     public float spawnEvery;
 
@@ -15,6 +15,6 @@ public class HoleSpawner : MonoBehaviour
     }
     void SpawnWithDelay()
     {
-        objectPool.SpawnFromPool("Cactus");
+        objectPool.SpawnFromPool("SafetyCone");
     }
 }

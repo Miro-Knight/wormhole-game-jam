@@ -1328,6 +1328,50 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &763426413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 763426414}
+  - component: {fileID: 763426415}
+  m_Layer: 0
+  m_Name: SafetyTubeSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &763426414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763426413}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1555879242}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &763426415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763426413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2462dfd8e8061140a0824d847136405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnEvery: 0.2
 --- !u!1 &893218202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,7 +1405,7 @@ MonoBehaviour:
   pools:
   - tag: rock
     prefab: {fileID: 703476703049767078, guid: fb0da3fe7566d4c41afa575f4e2cc257, type: 3}
-    size: 300
+    size: 200
   - tag: worm
     prefab: {fileID: 4992824010402890004, guid: 139afabd6f628e14ab93a12f7a585ea5,
       type: 3}
@@ -1370,6 +1414,14 @@ MonoBehaviour:
     prefab: {fileID: 8916727577246533765, guid: 03db6c81ecf5172489f4b63b9e37a689,
       type: 3}
     size: 50
+  - tag: SafetyCone
+    prefab: {fileID: 7239314362420528182, guid: 5b90f6eccc6525946a9bdad4d439c347,
+      type: 3}
+    size: 50
+  - tag: Cactus
+    prefab: {fileID: 8645964137641270655, guid: 63fed8d5d374bab4f9db1c11b66234b0,
+      type: 3}
+    size: 25
 --- !u!4 &893218204
 Transform:
   m_ObjectHideFlags: 0
@@ -1543,7 +1595,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 981678987}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2462dfd8e8061140a0824d847136405, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b22acb0f2813d8468d3e7401cf2eb99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnEvery: 0.2
@@ -2106,6 +2158,8 @@ Transform:
   - {fileID: 395117368}
   - {fileID: 59529221}
   - {fileID: 981678988}
+  - {fileID: 763426414}
+  - {fileID: 1846924675}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2248,6 +2302,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1846924674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1846924675}
+  - component: {fileID: 1846924676}
+  m_Layer: 0
+  m_Name: Cactus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1846924675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846924674}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1555879242}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1846924676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846924674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2462dfd8e8061140a0824d847136405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnEvery: 0.2
 --- !u!1 &1928703156
 GameObject:
   m_ObjectHideFlags: 0
