@@ -33,8 +33,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // moveDir = new Vector3(Input.GetAxis("Vertical"), 0, Input.GetAxis("Horizontal")).normalized;
-        moveDir = new Vector3(0, 0, Input.GetAxis("Horizontal")).normalized;
+         moveDir = new Vector3(Input.GetAxis("Vertical"), 0, Input.GetAxis("Horizontal")).normalized;
+        moveDir = new Vector3(0, 0, Input.GetAxis("Horiziontal")).normalized;
 }
 
     private void FixedUpdate()
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         move = Input.GetAxis("Vertical");
         rb.MovePosition(transform.position + (-transform.right) * carSpeed * Time.fixedDeltaTime);
         Speed.text = carSpeed.ToString("F0");
-        animator.SetFloat("Is Turning", move);
+        animator.SetFloat("Is Turning", Input.GetAxis("Horizontal"));
         Turn.text = Input.GetAxis("Horizontal").ToString("F0");
         if (Input.GetAxis("Horizontal") != 0)
         {
