@@ -42,19 +42,12 @@ public class ObjectPool : MonoBehaviour
                    
 
                 }
-                if (pool.tag == "hole")
-                {
-                    spawnPosition = Random.onUnitSphere * ((planet.transform.localScale.x / 2.3f) + pool.prefab.transform.localScale.y) + planet.transform.position;
-                    
-
-
-                }
+                
                 // Quaternion spawnRotation = Quaternion.identity;
                 GameObject obj = Instantiate(pool.prefab, spawnPosition,spawnRotation);
                 obj.AddComponent<BoxCollider>();
                 obj.AddComponent<FauxGravityBody>();
                 obj.GetComponent<FauxGravityBody>().attractor = planet.GetComponent<FauxGravityAttractor>();
-
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
             }

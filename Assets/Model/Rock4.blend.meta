@@ -3,7 +3,12 @@ guid: 6d4c8f3fcaac535439e4e7a7da0f8ab8
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 067a702024e67994f80015afb6c6a834, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -14,12 +19,12 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName:
-    rigImportErrors:
-    rigImportWarnings:
-    animationImportErrors:
-    animationImportWarnings:
-    animationRetargetingWarnings:
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
@@ -81,7 +86,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName:
+    rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
@@ -91,6 +96,6 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   additionalBone: 0
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
