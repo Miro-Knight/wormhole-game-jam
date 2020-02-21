@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed = 70;
     private float move;
     private Rigidbody rb;
+    public bool gameOVer = false;
 
     private Vector3 moveDir;
     // Start is called before the first frame update
@@ -51,7 +53,13 @@ public class PlayerController : MonoBehaviour
            
 
         }
+        if(gameOVer == true)
+        {
+            StartCoroutine(MyCoroutine());
+        }
+
     }
+    
     void ScaleSpeed()
     {
         if (!DestroyBuggy.isDead)
@@ -59,14 +67,20 @@ public class PlayerController : MonoBehaviour
             if (carSpeed < maxSpeed)
             {
                 carSpeed = carSpeed * 1.2f;
+                
             }
         }
         else
         {
             carSpeed = 0;
+            
         }
     }
-
+    IEnumerator MyCoroutine()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemy")
@@ -77,6 +91,8 @@ public class PlayerController : MonoBehaviour
             vCam.Follow = null;
             engineBoostAudio.Stop();
             deathAudio.Play();
+            gameOVer = true;
+            
         }
 
         if (other.tag == "Obstacle")
