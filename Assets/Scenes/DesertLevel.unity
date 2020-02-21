@@ -1405,11 +1405,11 @@ MonoBehaviour:
   pools:
   - tag: rock
     prefab: {fileID: 703476703049767078, guid: fb0da3fe7566d4c41afa575f4e2cc257, type: 3}
-    size: 200
+    size: 50
   - tag: worm
     prefab: {fileID: 4992824010402890004, guid: 139afabd6f628e14ab93a12f7a585ea5,
       type: 3}
-    size: 200
+    size: 100
   - tag: hole
     prefab: {fileID: 8916727577246533765, guid: 03db6c81ecf5172489f4b63b9e37a689,
       type: 3}
@@ -1598,7 +1598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b22acb0f2813d8468d3e7401cf2eb99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnEvery: 0.2
+  spawnEvery: 1
 --- !u!1 &1103716150
 GameObject:
   m_ObjectHideFlags: 0
@@ -2342,10 +2342,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1846924674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2462dfd8e8061140a0824d847136405, type: 3}
+  m_Script: {fileID: 11500000, guid: 20b4d2f3925ba5343b31ddf19bd7299f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnEvery: 0.2
+  spawnEvery: 0.3
 --- !u!1 &1928703156
 GameObject:
   m_ObjectHideFlags: 0
