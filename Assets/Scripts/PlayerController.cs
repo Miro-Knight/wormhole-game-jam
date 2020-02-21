@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource engineBoostAudio;
     public Animator animator;
     private CinemachineVirtualCamera vCam;
-    public static float carSpeed = 15;
+    public static float carSpeed = 40;
     public float maxSpeed = 70;
     private float move;
     private Rigidbody rb;
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
          moveDir = new Vector3(Input.GetAxis("Vertical"), 0, Input.GetAxis("Horizontal")).normalized;
-        moveDir = new Vector3(0, 0, Input.GetAxis("Horiziontal")).normalized;
+        
 }
 
     private void FixedUpdate()
@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
         Turn.text = Input.GetAxis("Horizontal").ToString("F0");
         if (Input.GetAxis("Horizontal") != 0)
         {
+            carSpeed = 70;
             rb.MovePosition(rb.position + transform.TransformDirection(moveDir) * carSpeed * Time.fixedDeltaTime);
            
 
