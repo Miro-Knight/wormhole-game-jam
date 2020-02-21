@@ -6,7 +6,6 @@ public class ObjectPool : MonoBehaviour
 {
     public static ObjectPool instance;
     public GameObject planet;
-   
 
     private void Awake()
     {
@@ -39,24 +38,25 @@ public class ObjectPool : MonoBehaviour
                 if (pool.tag == "worm")
                 {
                     spawnPosition = Random.onUnitSphere * ((planet.transform.localScale.x / 1.98f) + pool.prefab.transform.localScale.y) + planet.transform.position;
-                   
 
                 }
                 if (pool.tag == "SafetyCone")
                 {
                     spawnPosition = Random.onUnitSphere * ((planet.transform.localScale.x / 2.37f) + pool.prefab.transform.localScale.y) + planet.transform.position;
 
-
                 }
                 if (pool.tag == "Cactus")
                 {
-                    spawnPosition = Random.onUnitSphere * ((planet.transform.localScale.x / 1.70f) + pool.prefab.transform.localScale.y) + planet.transform.position;
-
+                    spawnPosition = Random.onUnitSphere * ((planet.transform.localScale.x / 1.85f) + pool.prefab.transform.localScale.y) + planet.transform.position;
 
                 }
                 // Quaternion spawnRotation = Quaternion.identity;
-                GameObject obj = Instantiate(pool.prefab, spawnPosition,spawnRotation);
-                obj.AddComponent<BoxCollider>();
+                GameObject obj = Instantiate(pool.prefab, spawnPosition, spawnRotation);
+                if (pool.tag != "SafetyCone")
+                {
+
+                    obj.AddComponent<BoxCollider>();
+                }
                 obj.AddComponent<FauxGravityBody>();
                 obj.GetComponent<FauxGravityBody>().attractor = planet.GetComponent<FauxGravityAttractor>();
                 obj.SetActive(false);

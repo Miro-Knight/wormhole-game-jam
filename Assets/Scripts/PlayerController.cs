@@ -71,7 +71,6 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Enemy")
 
         {
-            Debug.Log("enemy");
             destroyBuggy.DestroyCar();
             vCam.LookAt = null;
             vCam.Follow = null;

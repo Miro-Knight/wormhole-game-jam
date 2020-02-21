@@ -24,8 +24,6 @@ public class GameManager : MonoBehaviour
             timeTracker = Time.time.ToString("F2");
          
         }
-        Debug.Log(timeTracker);
-        Debug.Log(PlayerController.carSpeed.ToString("F0"));
         Score.text = timeTracker;
 
     }

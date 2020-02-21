@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 3420318343384288275}
   - component: {fileID: 8956498583837192426}
   - component: {fileID: -8779547564988980508}
+  - component: {fileID: 3076731725192591807}
+  - component: {fileID: -1807086583346859258}
   m_Layer: 0
   m_Name: Safety Looper Tube
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,3 +96,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e6595979a9d1d4d9fb061d383e6ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &3076731725192591807
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7239314362420528182}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.07883557, y: 0.07397885, z: 0.23375064}
+  m_Center: {x: 0.0046524853, y: -0.0051886956, z: 0.08621743}
+--- !u!114 &-1807086583346859258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7239314362420528182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20fa68bc302c5d4499e1c4cbb926a960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attractor: {fileID: 0}
