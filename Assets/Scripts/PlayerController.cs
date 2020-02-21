@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetAxis("Horizontal") != 0)
         {
             carSpeed = 70;
-            rb.MovePosition(rb.position + transform.TransformDirection(moveDir) * carSpeed * Time.fixedDeltaTime);
+            rb.MovePosition(rb.position + transform.TransformDirection(moveDir) * carSpeed * Time.fixedDeltaTime *2);
            
 
         }
