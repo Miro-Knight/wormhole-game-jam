@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47c1b1f30e7a2b048b0526cf8589601b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wormSpeed: 10
+  wormSpeed: 25
   worm: {fileID: 4992824010402890004}
 --- !u!1001 &3921509296345733149
 PrefabInstance:
