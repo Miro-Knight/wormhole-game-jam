@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         Turn.text = Input.GetAxis("Horizontal").ToString("F0");
         if (Input.GetAxis("Horizontal") != 0)
         {
-            carSpeed = 70;
+            carSpeed = 60;
             rb.MovePosition(rb.position + transform.TransformDirection(moveDir) * carSpeed * Time.fixedDeltaTime *2);
            
 
