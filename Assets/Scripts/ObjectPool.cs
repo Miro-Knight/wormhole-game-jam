@@ -35,9 +35,11 @@ public class ObjectPool : MonoBehaviour
             {
                 Vector3 spawnPosition = Random.onUnitSphere * ((planet.transform.localScale.x / 2.06f) + pool.prefab.transform.localScale.y) + planet.transform.position;
                 Quaternion spawnRotation = Random.rotation;
+                // Quaternion spawnRotation = Quaternion.identity;
                 if (pool.tag == "worm")
                 {
                     spawnPosition = Random.onUnitSphere * ((planet.transform.localScale.x / 1.98f) + pool.prefab.transform.localScale.y) + planet.transform.position;
+
 
                 }
                 if (pool.tag == "SafetyCone")
@@ -55,8 +57,14 @@ public class ObjectPool : MonoBehaviour
                     spawnPosition = Random.onUnitSphere * ((planet.transform.localScale.x / 1.85f) + pool.prefab.transform.localScale.y) + planet.transform.position;
 
                 }
-                // Quaternion spawnRotation = Quaternion.identity;
+                if (pool.tag == "Powerup")
+                {
+                    spawnPosition = Random.onUnitSphere * ((planet.transform.localScale.x / 1.95f) + pool.prefab.transform.localScale.y) + planet.transform.position;
+
+                }
                 GameObject obj = Instantiate(pool.prefab, spawnPosition, spawnRotation);
+                obj.SetActive(false);
+
                 if (pool.tag != "SafetyCone")
                 {
 
@@ -64,7 +72,7 @@ public class ObjectPool : MonoBehaviour
                 }
                 obj.AddComponent<FauxGravityBody>();
                 obj.GetComponent<FauxGravityBody>().attractor = planet.GetComponent<FauxGravityAttractor>();
-                obj.SetActive(false);
+                
                 objectPool.Enqueue(obj);
             }
             poolDict.Add(pool.tag, objectPool);
@@ -81,7 +89,7 @@ public class ObjectPool : MonoBehaviour
 
         GameObject objectToSpawn = poolDict[tag].Dequeue();
 
-        objectToSpawn.SetActive(true);
+       objectToSpawn.SetActive(true);
 
         poolDict[tag].Enqueue(objectToSpawn);
 
