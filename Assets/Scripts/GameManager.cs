@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public Text Score =null;
-    
+    public TextMeshProUGUI Score;
+
     private string timeTracker;
 
     // Start is called before the first frame update
@@ -22,9 +24,19 @@ public class GameManager : MonoBehaviour
         if (!DestroyBuggy.isDead)
         {
             timeTracker = Time.time.ToString("F2");
-         
-        }
-        Score.text = timeTracker;
 
+        }
+        Score.text = timeTracker + "s";
+
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
