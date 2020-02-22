@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     private DestroyBuggy destroyBuggy;
     public Text Speed = null;
-    public Text Turn = null;
     public AudioSource deathAudio;
     public AudioSource rockHitAudio;
     public AudioSource engineBoostAudio;
     public Animator animator;
     private CinemachineVirtualCamera vCam;
     public static float carSpeed = 15;
+    public float turnSpeed;
     public float maxSpeed = 70;
     private float move;
     private Rigidbody rb;
+    public bool gameOVer = false;
+
 
     private Vector3 moveDir;
     // Start is called before the first frame update
@@ -34,7 +37,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
          moveDir = new Vector3(Input.GetAxis("Vertical"), 0, Input.GetAxis("Horizontal")).normalized;
-        moveDir = new Vector3(0, 0, Input.GetAxis("Horiziontal")).normalized;
+        
 }
 
     private void FixedUpdate()
@@ -43,14 +46,20 @@ public class PlayerController : MonoBehaviour
         rb.MovePosition(transform.position + (-transform.right) * carSpeed * Time.fixedDeltaTime);
         Speed.text = carSpeed.ToString("F0");
         animator.SetFloat("Is Turning", Input.GetAxis("Horizontal"));
-        Turn.text = Input.GetAxis("Horizontal").ToString("F0");
         if (Input.GetAxis("Horizontal") != 0)
         {
-            rb.MovePosition(rb.position + transform.TransformDirection(moveDir) * carSpeed * Time.fixedDeltaTime);
+            turnSpeed = carSpeed + 30;
+            rb.MovePosition(rb.position + transform.TransformDirection(moveDir) * turnSpeed  * Time.fixedDeltaTime *2);
            
 
         }
+        if(gameOVer == true)
+        {
+            StartCoroutine(MyCoroutine());
+        }
+
     }
+    
     void ScaleSpeed()
     {
         if (!DestroyBuggy.isDead)
@@ -58,14 +67,20 @@ public class PlayerController : MonoBehaviour
             if (carSpeed < maxSpeed)
             {
                 carSpeed = carSpeed * 1.2f;
+                
             }
         }
         else
         {
             carSpeed = 0;
+            
         }
     }
-
+    IEnumerator MyCoroutine()
+    {
+        yield return new WaitForSeconds(5);
+        //destroyBuggy.isDead= false;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemy")
@@ -76,6 +91,8 @@ public class PlayerController : MonoBehaviour
             vCam.Follow = null;
             engineBoostAudio.Stop();
             deathAudio.Play();
+            gameOVer = true;
+            
         }
 
         if (other.tag == "Obstacle")
