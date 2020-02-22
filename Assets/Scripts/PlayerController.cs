@@ -58,8 +58,8 @@ public class PlayerController : MonoBehaviour
             // I TRIED TO MANIPULATE SPEED HERE AFTER RESTARTING THE GAME
             // YOU CAN EXPERIMENT WITH IT SOMEHOW
             StartCoroutine(EndGameMenu());
-            DestroyBuggy.isDead = false;
             carSpeed = 0;
+            DestroyBuggy.isDead = false;
         }
 
     }
@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         EndgameMenuUI.SetActive(true);
+        carSpeed = 10;
 
     }
 
