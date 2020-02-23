@@ -55,8 +55,6 @@ public class PlayerController : MonoBehaviour
         }
         if (DestroyBuggy.isDead)
         {
-            // I TRIED TO MANIPULATE SPEED HERE AFTER RESTARTING THE GAME
-            // YOU CAN EXPERIMENT WITH IT SOMEHOW
             StartCoroutine(EndGameMenu());
             carSpeed = 0;
             DestroyBuggy.isDead = false;
