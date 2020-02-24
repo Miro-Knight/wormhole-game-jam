@@ -124,6 +124,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Safety Looper Tube
       objectReference: {fileID: 0}
+    - target: {fileID: 8956498583837192426, guid: 5b90f6eccc6525946a9bdad4d439c347,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4c2e394c2386c484589c8d554255a3a2, type: 2}
+    - target: {fileID: 8956498583837192426, guid: 5b90f6eccc6525946a9bdad4d439c347,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: f7efe79bfed43be458d2bc123afc64a5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b90f6eccc6525946a9bdad4d439c347, type: 3}
 --- !u!1 &8432404252053979838 stripped
